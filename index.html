@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123d78"><meta name="description" content="AAYUSH नेपाली साहित्य — कथा, कविता, बाल साहित्य, जीवनी र नेपाली साहित्यको डिजिटल पुस्तकालय।">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png">
+<title>AAYUSH नेपाली साहित्य | गृहपृष्ठ</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f3f7ff;--card:#fff;--text:#172b4d;--primary:#1459a6;--border:#c8dcf5}
+body{font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+body[data-ay-theme="dark"]{--bg:#111827;--card:#1f2937;--text:#f8fafc;--primary:#93c5fd;--border:#475569}
+body[data-ay-theme="light"]{--bg:#f8fafc;--card:#fff;--text:#1e293b;--primary:#2563eb;--border:#cbd5e1}
+body[data-ay-theme="blue"]{--bg:#e8f3ff;--card:#fff;--text:#12345a;--primary:#075db5;--border:#9fc8f1}
+body[data-ay-theme="pink"]{--bg:#fff0f6;--card:#fff;--text:#64213f;--primary:#db2777;--border:#f3b6d2}
+body[data-ay-theme="yellow"]{--bg:#fff9db;--card:#fffef5;--text:#55420b;--primary:#b77908;--border:#ead58a}
+body[data-ay-theme="yellowblue"]{--bg:#fff7d6;--card:#f0f7ff;--text:#183b61;--primary:#1765ad;--border:#e7c85f}
+body[data-ay-theme="bluepink"]{--bg:#eaf4ff;--card:#fff0f7;--text:#3d3159;--primary:#a13d9b;--border:#d8b5e5}
+body[data-ay-theme="green"]{--bg:#edf8ef;--card:#fff;--text:#173d27;--primary:#23834a;--border:#b8dfc2}
+body[data-ay-theme="purple"]{--bg:#f4efff;--card:#fff;--text:#352451;--primary:#7442c8;--border:#d2c1f0}
+body[data-ay-theme="sepia"]{--bg:#f4ead8;--card:#fff8e9;--text:#493b2a;--primary:#98652b;--border:#dfcba9}
+header{padding:35px 16px;text-align:center;color:white;background:linear-gradient(130deg,#09295a,#1767b1,#13a6a0)}
+.logo{width:112px;height:112px;object-fit:cover;border:3px solid #ffd34e;border-radius:24px;box-shadow:0 5px 18px #0004}
+header h1{font-size:clamp(28px,5vw,46px);margin:10px 0 4px}
+header p{font-size:16px}
+nav{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:2px solid var(--border);padding:12px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+nav a{color:var(--primary);text-decoration:none;font-weight:700;padding:6px 10px;border-radius:8px}
+nav a:hover{background:var(--border)}
+.wrap{max-width:1150px;margin:auto;padding:22px 16px}
+.hero,.card,.about{background:var(--card);border:2px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 5px 18px #0000000c}
+.hero{text-align:center;margin:10px 0 25px}
+.hero h2{color:var(--primary);font-size:26px}
+.hero p{margin-top:8px}
+.section-title{margin:25px 0 14px;color:var(--primary)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{display:flex;flex-direction:column;gap:8px;transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 22px #0002}
+.card .icon{font-size:32px}
+.card h3{color:var(--primary)}
+.card p{font-size:14px;flex:1}
+.card a{display:inline-block;text-align:center;text-decoration:none;background:var(--primary);color:#fff;padding:9px;border-radius:9px;font-weight:bold}
+.about{margin-top:25px}
+footer{text-align:center;padding:25px;background:#102c55;color:white;margin-top:30px}
+.ay-tools{max-width:1120px;margin:16px auto;padding:16px;background:var(--card);color:var(--text);border:2px solid var(--border);border-radius:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;align-items:end}
+.ay-tools h2,.ay-hint{grid-column:1/-1}.ay-tools h2{color:var(--primary)}.ay-tools label{display:block;font-weight:bold}
+.ay-tools select,.ay-tools input{width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text)}
+.ay-tools button{padding:10px;border:0;border-radius:8px;background:var(--primary);color:white;cursor:pointer}
+.ay-actions{display:flex;flex-wrap:wrap;gap:6px}.ay-speed{grid-column:span 2}.ay-hint{font-size:12px}
+@media(max-width:600px){.ay-speed{grid-column:span 1}}
+</style></head><body>
+<header><img class="logo" src="icon-512.png" alt="AAYUSH SAHITYA Logo">
+<h1>AAYUSH नेपाली साहित्य</h1><p>नेपाली कथा, कविता, बाल साहित्य र साहित्यको डिजिटल संसार</p><p>पढौँ • लेखौँ • सिकौँ • सिर्जना गरौँ</p></header>
+<nav>
+<a href="index.html">🏠 गृहपृष्ठ</a><a href="bal-sahitya.html">बाल साहित्य</a><a href="jibani.html">जीवनी</a><a href="kabita.html">कविता</a><a href="katha.html">कथा</a><a href="nibandha.html">निबन्ध</a><a href="ramayan.html">रामायण</a><a href="hanuman-chalisa.html">हनुमान चालिसा</a><a href="manifest.json">Manifest</a>
+</nav>
+<section class="ay-tools" id="ayTools">
+<h2>🎨 Theme र 🔊 Speech Settings</h2>
+<div><label for="ayTheme">१० वटा Theme</label><select id="ayTheme"><option value="light">Light</option><option value="blue">Blue</option><option value="dark">Dark</option><option value="pink">Pink</option><option value="yellow">Yellow</option><option value="yellowblue">Yellow Blue</option><option value="bluepink">Blue Pink</option><option value="green">Green</option><option value="purple">Purple</option><option value="sepia">Sepia</option></select></div>
+<div><label for="ayLanguage">Speech भाषा</label><select id="ayLanguage"><option value="ne-NP">नेपाली</option><option value="hi-IN">हिन्दी</option><option value="en-US">English (US)</option><option value="en-GB">English (UK)</option></select></div>
+<div><label for="ayVoice">आवाज</label><select id="ayVoice"><option value="">Auto / Default</option></select></div>
+<div class="ay-speed"><label for="ayRate">गति <span id="ayRateValue">1.00×</span></label><input id="ayRate" type="range" min=".5" max="3.5" step=".05" value="1"></div>
+<div><label for="ayPreset">Speed Preset</label><select id="ayPreset"><option value=".75">Slow</option><option value="1">Medium</option><option value="1.25">Fast</option><option value="1.5">Very Fast</option><option value="2">Ultra Fast</option><option value="2.5">Super Fast</option><option value="3.5">Very Very Fast</option></select></div>
+<div class="ay-actions"><button id="aySpeak">▶ पढ्नुहोस्</button><button id="ayPause">⏸ Pause</button><button id="ayResume">▶ Resume</button><button id="ayStop">■ Stop</button></div>
+<p class="ay-hint" id="ayStatus">Theme र Speech सेटिङ छान्नुहोस्। Voice उपलब्धता ब्राउजर/डिभाइसमा निर्भर हुन्छ।</p>
+</section>
+<main class="wrap">
+<section class="hero"><h2>🙏 आयुष नेपाली साहित्यमा स्वागत छ</h2><p>नेपाली भाषा, साहित्य, संस्कृति र सिर्जनालाई डिजिटल माध्यमबाट सबै पाठकसम्म पुर्‍याउने साझा प्रयास। आफूलाई मन परेको विधा छानेर पढ्न सुरु गर्नुहोस्।</p></section>
+<h2 class="section-title">📚 साहित्यका मुख्य विभागहरू</h2>
+<section class="grid">
+<article class="card"><div class="icon">🧒📚</div><h3>बाल साहित्य</h3><p>बालबालिकाका लागि रमाइला कथा, कविता, ज्ञान र नैतिक सन्देश।</p><a href="bal-sahitya.html">बाल साहित्य पढ्नुहोस् →</a></article>
+<article class="card"><div class="icon">✍️</div><h3>जीवनी</h3><p>महान व्यक्तिहरूको जीवन, संघर्ष, उपलब्धि र योगदानका प्रेरक प्रसंग।</p><a href="jibani.html">जीवनी पढ्नुहोस् →</a></article>
+<article class="card"><div class="icon">🌸</div><h3>कविता</h3><p>भावना, प्रकृति, देशप्रेम र जीवनका विविध विषयका कविता।</p><a href="kabita.html">कविता पढ्नुहोस् →</a></article>
+<article class="card"><div class="icon">📖</div><h3>कथा</h3><p>मनोरञ्जन, कल्पना, अनुभव र जीवनोपयोगी सन्देश बोकेका कथा।</p><a href="katha.html">कथा पढ्नुहोस् →</a></article>
+<article class="card"><div class="icon">📝</div><h3>निबन्ध</h3><p>शिक्षा, समाज, प्रकृति, विज्ञान र जीवनका विविध विषयमा निबन्ध।</p><a href="nibandha.html">निबन्ध पढ्नुहोस् →</a></article>
+<article class="card"><div class="icon">🚩</div><h3>रामायण</h3><p>रामायणका सात काण्ड र आदर्श जीवनका प्रेरणादायी प्रसंग।</p><a href="ramayan.html">रामायण पढ्नुहोस् →</a></article>
+<article class="card"><div class="icon">🙏</div><h3>हनुमान चालीसा</h3><p>श्री हनुमान चालीसाको पाठ र श्रवण सुविधा।</p><a href="hanuman-chalisa.html">हनुमान चालीसा खोल्नुहोस् →</a></article>
+</section>
+<section class="about"><h2>🎯 हाम्रो उद्देश्य</h2><p>नेपाली भाषा र साहित्यको संरक्षण, सम्बर्द्धन तथा प्रवर्द्धन गर्नु; नयाँ पुस्तामा पढ्ने, लेख्ने र सिर्जना गर्ने बानीको विकास गर्नु; र पाठक तथा लेखकबीच साहित्यिक सम्बन्ध स्थापित गर्नु हाम्रो लक्ष्य हो।</p><p><b>Founder & Developer:</b> Aayush Jaishi</p></section>
+</main><footer>© <span id="year"></span> AAYUSH NEPALI SAHITYA · Developed by Aayush Jaishi</footer>
+<script>
+(()=>{const $=id=>document.getElementById(id),theme=$('ayTheme'),lang=$('ayLanguage'),voice=$('ayVoice'),rate=$('ayRate'),preset=$('ayPreset'),status=$('ayStatus');theme.value=localStorage.getItem('aayushSharedTheme')||'light';document.body.dataset.ayTheme=theme.value;theme.onchange=()=>{document.body.dataset.ayTheme=theme.value;localStorage.setItem('aayushSharedTheme',theme.value)};lang.value=localStorage.getItem('aayushSpeechLang')||'ne-NP';lang.onchange=()=>{localStorage.setItem('aayushSpeechLang',lang.value);fill()};rate.value=localStorage.getItem('aayushSpeechRate')||1;preset.value=rate.value;$('ayRateValue').textContent=Number(rate.value).toFixed(2)+'×';rate.oninput=()=>{$('ayRateValue').textContent=Number(rate.value).toFixed(2)+'×';localStorage.setItem('aayushSpeechRate',rate.value)};preset.onchange=()=>{rate.value=preset.value;rate.dispatchEvent(new Event('input'))};let voices=[];function fill(){if(!speechSynthesis)return;voices=speechSynthesis.getVoices();voice.innerHTML='<option value="">Auto / Default</option>';voices.filter(v=>v.lang.toLowerCase().startsWith(lang.value.slice(0,2).toLowerCase())).forEach(v=>{let o=document.createElement('option');o.value=v.name;o.textContent=v.name+' ('+v.lang+')';voice.appendChild(o)})}if('speechSynthesis'in window){fill();speechSynthesis.onvoiceschanged=fill}$('aySpeak').onclick=()=>{if(!('speechSynthesis'in window)){status.textContent='Speech API उपलब्ध छैन।';return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(document.querySelector('main').innerText);u.lang=lang.value;u.rate=Number(rate.value);u.voice=voices.find(v=>v.name===voice.value)||null;u.onstart=()=>status.textContent='पढिरहेको छ…';u.onend=()=>status.textContent='पढाइ पूरा भयो।';speechSynthesis.speak(u)};$('ayPause').onclick=()=>speechSynthesis.pause();$('ayResume').onclick=()=>speechSynthesis.resume();$('ayStop').onclick=()=>{speechSynthesis.cancel();status.textContent='पढाइ बन्द गरियो।'};$('year').textContent=new Date().getFullYear()})();
+</script></body></html>

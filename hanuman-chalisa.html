@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>हनुमान चालीसा | AAYUSH NEPALI SAHITYA</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans Devanagari", Arial, sans-serif;
+    background: linear-gradient(135deg,#fff3e0,#ffcc80);
+    color: #492000;
+    transition: .3s;
+}
+
+body.dark {
+    background: #17120f;
+    color: #ffe0b2;
+}
+
+header {
+    background: linear-gradient(120deg,#b71c1c,#ef6c00);
+    color: white;
+    text-align: center;
+    padding: 28px 12px;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 14px;
+}
+
+.container {
+    max-width: 950px;
+    margin: 22px auto;
+    padding: 15px;
+}
+
+.panel {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 18px #0002;
+}
+
+.dark .panel {
+    background: #29211c;
+}
+
+h2 {
+    color: #d84315;
+    margin-bottom: 15px;
+}
+
+.dark h2 {
+    color: #ffab40;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+    gap: 14px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+select, input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0a36d;
+    border-radius: 8px;
+    background: #fffaf5;
+}
+
+button {
+    border: none;
+    padding: 11px 16px;
+    margin: 5px 3px;
+    border-radius: 9px;
+    background: #e65100;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #bf360c;
+    transform: translateY(-1px);
+}
+
+button.secondary {
+    background: #6d4c41;
+}
+
+button.green {
+    background: #2e7d32;
+}
+
+button.blue {
+    background: #1565c0;
+}
+
+.status {
+    margin-top: 12px;
+    padding: 12px;
+    background: #fff3e0;
+    border-radius: 8px;
+    color: #8d3b00;
+    font-weight: bold;
+}
+
+.dark .status {
+    background: #403026;
+    color: #ffcc80;
+}
+
+.verse {
+    padding: 15px;
+    margin: 12px 0;
+    background: #fff8e1;
+    border-left: 5px solid #ef6c00;
+    border-radius: 8px;
+    line-height: 2;
+    font-size: 19px;
+    white-space: pre-line;
+}
+
+.dark .verse {
+    background: #382a20;
+}
+
+.verse button {
+    font-size: 13px;
+    padding: 7px 11px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #4e260c;
+    color: white;
+    margin-top: 30px;
+}
+
+.top-buttons {
+    text-align: center;
+    margin: 15px 0;
+}
+
+@media(max-width:600px) {
+    header h1 {font-size: 23px;}
+    .verse {font-size: 17px;}
+    .panel {padding: 14px;}
+}
+</style>
+<style>
+/* AAYUSH SAHITYA: shared 10-theme, border and reading controls */
+:root{--ay-bg:#f4f7ff;--ay-card:#fff;--ay-text:#18243a;--ay-primary:#1765ad;--ay-border:#b9d5f2;--ay-soft:#e7f1ff}
+body{background:var(--ay-bg)!important;color:var(--ay-text)!important;transition:background .25s,color .25s}
+body[data-ay-theme="dark"]{--ay-bg:#111827;--ay-card:#1f2937;--ay-text:#f8fafc;--ay-primary:#93c5fd;--ay-border:#475569;--ay-soft:#29384d}
+body[data-ay-theme="light"]{--ay-bg:#f8fafc;--ay-card:#fff;--ay-text:#1e293b;--ay-primary:#2563eb;--ay-border:#cbd5e1;--ay-soft:#eff6ff}
+body[data-ay-theme="blue"]{--ay-bg:#e8f3ff;--ay-card:#fff;--ay-text:#12345a;--ay-primary:#075db5;--ay-border:#9fc8f1;--ay-soft:#d8ebff}
+body[data-ay-theme="pink"]{--ay-bg:#fff0f6;--ay-card:#fff;--ay-text:#64213f;--ay-primary:#db2777;--ay-border:#f3b6d2;--ay-soft:#ffe0ed}
+body[data-ay-theme="yellow"]{--ay-bg:#fff9db;--ay-card:#fffef5;--ay-text:#55420b;--ay-primary:#b77908;--ay-border:#ead58a;--ay-soft:#fff0b8}
+body[data-ay-theme="yellowblue"]{--ay-bg:#fff7d6;--ay-card:#f0f7ff;--ay-text:#183b61;--ay-primary:#1765ad;--ay-border:#e7c85f;--ay-soft:#e4efff}
+body[data-ay-theme="bluepink"]{--ay-bg:#eaf4ff;--ay-card:#fff0f7;--ay-text:#3d3159;--ay-primary:#a13d9b;--ay-border:#d8b5e5;--ay-soft:#f7e5f5}
+body[data-ay-theme="green"]{--ay-bg:#edf8ef;--ay-card:#fff;--ay-text:#173d27;--ay-primary:#23834a;--ay-border:#b8dfc2;--ay-soft:#dff3e4}
+body[data-ay-theme="purple"]{--ay-bg:#f4efff;--ay-card:#fff;--ay-text:#352451;--ay-primary:#7442c8;--ay-border:#d2c1f0;--ay-soft:#eae0ff}
+body[data-ay-theme="sepia"]{--ay-bg:#f4ead8;--ay-card:#fff8e9;--ay-text:#493b2a;--ay-primary:#98652b;--ay-border:#dfcba9;--ay-soft:#efe0c3}
+body .panel,body .intro,body .item,body .card,body .category-card,body .poem-card,body .essay-item,body .essay-box,body .kanda,body .toc,body .stats,body .modal-content,body .story-reader,body .verse,body .reader,body .purpose,body .value-card,body .founder-box,body .category,body .category-grid>*,body .item,body #reader,body #readerText{
+ background-color:var(--ay-card)!important;color:var(--ay-text)!important;border:1px solid var(--ay-border)!important;
+}
+body p,body li,body label,body h1,body h2,body h3,body h4{color:inherit}
+body input,body select,body textarea{background:var(--ay-card)!important;color:var(--ay-text)!important;border:1px solid var(--ay-border)!important}
+body a{color:var(--ay-primary)}
+.ay-tools{max-width:1120px;margin:16px auto;padding:16px;background:var(--ay-card);color:var(--ay-text);border:2px solid var(--ay-border);border-radius:16px;box-shadow:0 5px 18px #00000012;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;align-items:end;font:14px/1.6 system-ui,sans-serif}
+.ay-tools h2{grid-column:1/-1;margin:0;color:var(--ay-primary);font-size:19px}
+.ay-tools label{display:block;font-weight:700;margin-bottom:5px}
+.ay-tools select,.ay-tools input{width:100%;min-width:0;padding:9px;border-radius:8px;border:1px solid var(--ay-border);background:var(--ay-card);color:var(--ay-text)}
+.ay-tools button{padding:10px 12px;border:1px solid var(--ay-border);border-radius:8px;background:var(--ay-primary);color:white;cursor:pointer;font-weight:700}
+.ay-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.ay-speed{grid-column:span 2}
+.ay-hint{grid-column:1/-1;margin:0;font-size:12px;opacity:.8}
+@media(max-width:600px){.ay-tools{margin:12px;padding:12px}.ay-speed{grid-column:span 1}}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚩 श्री हनुमान चालीसा 🚩</h1>
+    <p>भक्ति, श्रद्धा र सकारात्मकताको पवित्र पाठ</p>
+    <p>AAYUSH NEPALI SAHITYA</p>
+</header>
+<section class="ay-tools" id="ayTools" aria-label="थिम तथा आवाज सेटिङ">
+ <h2>🎨 Theme र 🔊 Speech Settings</h2>
+ <div><label for="ayTheme">रङ / Theme छान्नुहोस्</label>
+  <select id="ayTheme">
+   <option value="light">1. Light</option><option value="blue">2. Blue</option>
+   <option value="dark">3. Dark</option><option value="pink">4. Pink</option>
+   <option value="yellow">5. Yellow</option><option value="yellowblue">6. Yellow Blue</option>
+   <option value="bluepink">7. Blue Pink</option><option value="green">8. Green</option>
+   <option value="purple">9. Purple</option><option value="sepia">10. Sepia</option>
+  </select>
+ </div>
+ <div><label for="ayLanguage">Speech भाषा</label><select id="ayLanguage">
+  <option value="ne-NP">नेपाली (Nepali)</option><option value="hi-IN">हिन्दी (Hindi)</option>
+  <option value="en-US">English (US)</option><option value="en-GB">English (UK)</option>
+ </select></div>
+ <div><label for="ayVoice">आवाज छान्नुहोस्</label><select id="ayVoice"><option value="">Auto / Default</option></select></div>
+ <div class="ay-speed"><label for="ayRate">बोल्ने गति: <span id="ayRateValue">1.00×</span></label>
+  <input id="ayRate" type="range" min="0.5" max="3.5" step="0.05" value="1">
+ </div>
+ <div><label for="ayPreset">Speed Preset</label><select id="ayPreset">
+  <option value="0.75">Slow</option><option value="1">Medium</option><option value="1.25">Fast</option>
+  <option value="1.5">Very Fast</option><option value="2">Ultra Fast</option>
+  <option value="2.5">Super Fast</option><option value="3.5">Very Very Fast</option>
+ </select></div>
+ <div class="ay-actions">
+  <button type="button" id="aySpeak">▶ पढ्नुहोस्</button>
+  <button type="button" id="ayPause">⏸ Pause</button>
+  <button type="button" id="ayResume">▶ Resume</button>
+  <button type="button" id="ayStop">■ Stop</button>
+ </div>
+ <p class="ay-hint" id="ayStatus">आफ्नो Theme, भाषा र गति छानेर पढ्नुहोस् थिच्नुहोस्। आवाज उपलब्धता ब्राउजर/डिभाइसमा निर्भर हुन्छ।</p>
+</section>
+
+
+<div class="container">
+
+    <div class="top-buttons">
+        <button onclick="toggleTheme()">🌙 Dark / Light</button>
+        <button onclick="changeFont(1)">A+ अक्षर ठूलो</button>
+        <button onclick="changeFont(-1)">A- अक्षर सानो</button>
+    </div>
+
+    <section class="panel">
+        <h2>🎵 आवाज तथा Speech Settings</h2>
+
+        <div class="controls">
+
+            <div>
+                <label for="voiceSelect">आवाज छान्नुहोस्</label>
+                <select id="voiceSelect">
+                    <option value="">Default Voice</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="styleSelect">Speech Style</label>
+                <select id="styleSelect">
+                    <option value="normal">Normal Reading</option>
+                    <option value="bhajan">Bhajan Style</option>
+                    <option value="rhythm">Rhythm Style</option>
+                    <option value="slow">Slow Devotional</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="rateControl">बोल्ने गति: <span id="rateValue">0.8</span></label>
+                <input id="rateControl" type="range"
+                    min="0.5" max="1.5" step="0.1" value="0.8">
+            </div>
+
+            <div>
+                <label for="pitchControl">आवाजको Pitch: <span id="pitchValue">1</span></label>
+                <input id="pitchControl" type="range"
+                    min="0.5" max="2" step="0.1" value="1">
+            </div>
+        </div>
+
+        <div style="margin-top:18px;text-align:center">
+            <button class="green" onclick="playAll()">▶ पूरा पाठ</button>
+            <button class="blue" onclick="pauseAudio()">⏸ Pause</button>
+            <button class="green" onclick="resumeAudio()">▶ Resume</button>
+            <button class="secondary" onclick="stopAudio()">⏹ Stop</button>
+        </div>
+
+        <div class="status" id="status">
+            🙏 पाठ सुरु गर्न Play बटन थिच्नुहोस्।
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>📖 हनुमान चालीसा</h2>
+        <div id="chalisaContent"></div>
+    </section>
+
+</div>
+
+<footer>
+    <p>🚩 जय श्री राम | जय हनुमान 🚩</p>
+    <p>© AAYUSH NEPALI SAHITYA</p>
+</footer>
+
+<script>
+const verses = [
+`श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।
+बरनऊँ रघुबर बिमल जसु, जो दायकु फल चारि॥`,
+
+`बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार।
+बल बुद्धि विद्या देहु मोहिं, हरहु कलेस बिकार॥`,
+
+`जय हनुमान ज्ञान गुन सागर।
+जय कपीस तिहुँ लोक उजागर॥`,
+
+`राम दूत अतुलित बल धामा।
+अंजनि-पुत्र पवनसुत नामा॥`,
+
+`महाबीर बिक्रम बजरंगी।
+कुमति निवार सुमति के संगी॥`,
+
+`कंचन बरन बिराज सुबेसा।
+कानन कुण्डल कुंचित केसा॥`,
+
+`हाथ बज्र औ ध्वजा बिराजै।
+काँधे मूँज जनेऊ साजै॥`,
+
+`शंकर सुवन केसरी नंदन।
+तेज प्रताप महा जग वंदन॥`,
+
+`विद्यावान गुनी अति चातुर।
+राम काज करिबे को आतुर॥`,
+
+`प्रभु चरित्र सुनिबे को रसिया।
+राम लखन सीता मन बसिया॥`,
+
+`सूक्ष्म रूप धरि सियहिं दिखावा।
+विकट रूप धरि लंक जरावा॥`,
+
+`भीम रूप धरि असुर सँहारे।
+रामचंद्र के काज सँवारे॥`,
+
+`लाय सजीवन लखन जियाये।
+श्री रघुबीर हरषि उर लाये॥`,
+
+`रघुपति कीन्ही बहुत बड़ाई।
+तुम मम प्रिय भरतहि सम भाई॥`,
+
+`सहस बदन तुम्हरो जस गावैं।
+अस कहि श्रीपति कंठ लगावैं॥`,
+
+`सनकादिक ब्रह्मादि मुनीसा।
+नारद सारद सहित अहीसा॥`,
+
+`जम कुबेर दिगपाल जहाँ ते।
+कवि कोविद कहि सके कहाँ ते॥`,
+
+`तुम उपकार सुग्रीवहिं कीन्हा।
+राम मिलाय राज पद दीन्हा॥`,
+
+`तुम्हरो मंत्र विभीषण माना।
+लंकेश्वर भए सब जग जाना॥`,
+
+`जुग सहस्र जोजन पर भानू।
+लील्यो ताहि मधुर फल जानू॥`,
+
+`प्रभु मुद्रिका मेलि मुख माहीं।
+जलधि लाँघि गये अचरज नाहीं॥`,
+
+`दुर्गम काज जगत के जेते।
+सुगम अनुग्रह तुम्हरे तेते॥`,
+
+`राम दुआरे तुम रखवारे।
+होत न आज्ञा बिनु पैसारे॥`,
+
+`सब सुख लहै तुम्हारी सरना।
+तुम रक्षक काहू को डरना॥`,
+
+`आपन तेज सम्हारो आपै।
+तीनों लोक हाँक तें काँपै॥`,
+
+`भूत पिशाच निकट नहिं आवै।
+महाबीर जब नाम सुनावै॥`,
+
+`नासै रोग हरै सब पीरा।
+जपत निरंतर हनुमत बीरा॥`,
+
+`संकट तें हनुमान छुड़ावै।
+मन क्रम वचन ध्यान जो लावै॥`,
+
+`सब पर राम तपस्वी राजा।
+तिनके काज सकल तुम साजा॥`,
+
+`और मनोरथ जो कोई लावै।
+सोइ अमित जीवन फल पावै॥`,
+
+`चारों जुग परताप तुम्हारा।
+है परसिद्ध जगत उजियारा॥`,
+
+`साधु संत के तुम रखवारे।
+असुर निकंदन राम दुलारे॥`,
+
+`अष्ट सिद्धि नौ निधि के दाता।
+अस बर दीन जानकी माता॥`,
+
+`राम रसायन तुम्हरे पासा।
+सदा रहो रघुपति के दासा॥`,
+
+`तुम्हरे भजन राम को पावै।
+जनम जनम के दुख बिसरावै॥`,
+
+`अंत काल रघुबर पुर जाई।
+जहाँ जन्म हरि-भक्त कहाई॥`,
+
+`और देवता चित्त न धरई।
+हनुमत सेइ सर्व सुख करई॥`,
+
+`संकट कटै मिटै सब पीरा।
+जो सुमिरै हनुमत बलबीरा॥`,
+
+`जय जय जय हनुमान गोसाईं।
+कृपा करहु गुरुदेव की नाईं॥`,
+
+`जो सत बार पाठ कर कोई।
+छूटहि बंदि महा सुख होई॥`,
+
+`जो यह पढ़ै हनुमान चालीसा।
+होय सिद्धि साखी गौरीसा॥`,
+
+`तुलसीदास सदा हरि चेरा।
+कीजै नाथ हृदय महँ डेरा॥`,
+
+`पवनतनय संकट हरन, मंगल मूरति रूप।
+राम लखन सीता सहित, हृदय बसहु सुर भूप॥`
+];
+
+let currentIndex = 0;
+let playing = false;
+let fontSize = 19;
+let voices = [];
+
+const synth = window.speechSynthesis;
+
+function renderVerses() {
+    const area = document.getElementById("chalisaContent");
+    area.innerHTML = "";
+
+    verses.forEach((verse, index) => {
+        const div = document.createElement("div");
+        div.className = "verse";
+        div.style.fontSize = fontSize + "px";
+
+        const text = document.createElement("div");
+        text.textContent = verse;
+
+        const button = document.createElement("button");
+        button.textContent = "🔊 यो श्लोक पढ्नुहोस्";
+        button.onclick = () => readVerse(index);
+
+        div.appendChild(text);
+        div.appendChild(button);
+        area.appendChild(div);
+    });
+}
+
+function loadVoices() {
+    voices = synth.getVoices();
+    const select = document.getElementById("voiceSelect");
+    const oldValue = select.value;
+
+    select.innerHTML = '<option value="">Default Voice</option>';
+
+    voices.forEach((voice, index) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.textContent = voice.name + " (" + voice.lang + ")";
+        select.appendChild(option);
+    });
+
+    if (oldValue !== "") select.value = oldValue;
+}
+
+if ("speechSynthesis" in window) {
+    loadVoices();
+    synth.onvoiceschanged = loadVoices;
+}
+
+function getSpeechSettings() {
+    let rate = Number(document.getElementById("rateControl").value);
+    let pitch = Number(document.getElementById("pitchControl").value);
+
+    const style = document.getElementById("styleSelect").value;
+
+    if (style === "bhajan") {
+        rate = Math.min(rate, 0.75);
+        pitch = Math.max(pitch, 1.1);
+    }
+
+    if (style === "rhythm") {
+        rate = Math.min(rate, 0.9);
+    }
+
+    if (style === "slow") {
+        rate = 0.6;
+    }
+
+    return {rate, pitch};
+}
+
+function speak(text, onEnd) {
+    if (!("speechSynthesis" in window)) {
+        updateStatus("यो Browser मा Speech सुविधा उपलब्ध छैन।");
+        return;
+    }
+
+    synth.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "hi-IN";
+
+    const selectedVoice = document.getElementById("voiceSelect").value;
+
+    if (selectedVoice !== "" && voices[selectedVoice]) {
+        utterance.voice = voices[selectedVoice];
+        utterance.lang = voices[selectedVoice].lang;
+    }
+
+    const settings = getSpeechSettings();
+    utterance.rate = settings.rate;
+    utterance.pitch = settings.pitch;
+
+    utterance.onend = function() {
+        if (onEnd) onEnd();
+    };
+
+    utterance.onerror = function() {
+        updateStatus("आवाज चलाउन समस्या भयो। अर्को Voice छानेर प्रयास गर्नुहोस्।");
+        playing = false;
+    };
+
+    synth.speak(utterance);
+}
+
+function playAll() {
+    stopAudio();
+    currentIndex = 0;
+    playing = true;
+    playNext();
+}
+
+function playNext() {
+    if (!playing || currentIndex >= verses.length) {
+        playing = false;
+        updateStatus("🙏 पूरा पाठ समाप्त भयो। जय हनुमान!");
+        return;
+    }
+
+    updateStatus("🔊 पाठ भइरहेको छ: " + (currentIndex + 1) + " / " + verses.length);
+
+    speak(verses[currentIndex], function() {
+        currentIndex++;
+        if (playing) {
+            setTimeout(playNext, 500);
+        }
+    });
+}
+
+function readVerse(index) {
+    stopAudio();
+    currentIndex = index;
+    playing = false;
+    updateStatus("🔊 श्लोक " + (index + 1) + " पढिँदैछ।");
+    speak(verses[index]);
+}
+
+function pauseAudio() {
+    if (synth.speaking && !synth.paused) {
+        synth.pause();
+        updateStatus("⏸ पाठ रोकिएको छ।");
+    }
+}
+
+function resumeAudio() {
+    if (synth.paused) {
+        synth.resume();
+        updateStatus("▶ पाठ फेरि सुरु भयो।");
+    }
+}
+
+function stopAudio() {
+    playing = false;
+    synth.cancel();
+    updateStatus("⏹ पाठ रोकियो।");
+}
+
+function updateStatus(message) {
+    document.getElementById("status").textContent = message;
+}
+
+function changeFont(amount) {
+    fontSize += amount;
+    if (fontSize < 14) fontSize = 14;
+    if (fontSize > 32) fontSize = 32;
+    renderVerses();
+}
+
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+
+document.getElementById("rateControl").addEventListener("input", function() {
+    document.getElementById("rateValue").textContent = this.value;
+});
+
+document.getElementById("pitchControl").addEventListener("input", function() {
+    document.getElementById("pitchValue").textContent = this.value;
+});
+
+renderVerses();
+</script>
+
+
+<script>
+(()=> {
+ const $=id=>document.getElementById(id);
+ const theme=$('ayTheme'), lang=$('ayLanguage'), voice=$('ayVoice'), rate=$('ayRate'), preset=$('ayPreset'), status=$('ayStatus');
+ const savedTheme=localStorage.getItem('aayushSharedTheme')||'light';
+ document.body.dataset.ayTheme=savedTheme; theme.value=savedTheme;
+ theme.addEventListener('change',()=>{document.body.dataset.ayTheme=theme.value;localStorage.setItem('aayushSharedTheme',theme.value)});
+ const savedLang=localStorage.getItem('aayushSpeechLang'); if(savedLang) lang.value=savedLang;
+ lang.addEventListener('change',()=>{localStorage.setItem('aayushSpeechLang',lang.value);fillVoices()});
+ const savedRate=localStorage.getItem('aayushSpeechRate'); if(savedRate){rate.value=savedRate;preset.value=savedRate}
+ function showRate(){ $('ayRateValue').textContent=Number(rate.value).toFixed(2)+'×'; }
+ rate.addEventListener('input',()=>{showRate();localStorage.setItem('aayushSpeechRate',rate.value)});
+ preset.addEventListener('change',()=>{rate.value=preset.value;showRate();localStorage.setItem('aayushSpeechRate',rate.value)});
+ showRate();
+ let voices=[];
+ function fillVoices(){
+  if(!('speechSynthesis' in window)) return;
+  voices=window.speechSynthesis.getVoices()||[];
+  const wanted=lang.value;
+  const matching=voices.filter(v=>v.lang.toLowerCase().startsWith(wanted.slice(0,2).toLowerCase()));
+  voice.innerHTML='<option value="">Auto / Default</option>';
+  (matching.length?matching:voices).forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+' ('+v.lang+')';voice.appendChild(o)});
+ }
+ if('speechSynthesis' in window){fillVoices();window.speechSynthesis.onvoiceschanged=fillVoices}
+ function getReadableText(){
+  const clone=document.querySelector('main')||document.querySelector('.container')||document.body;
+  const copy=clone.cloneNode(true);
+  copy.querySelectorAll('#ayTools,script,style,button,input,select,textarea,nav,footer,.modal,.pagination').forEach(n=>n.remove());
+  return (copy.innerText||copy.textContent||'').replace(/\s+/g,' ').trim().slice(0,18000);
+ }
+ $('aySpeak').addEventListener('click',()=>{
+  if(!('speechSynthesis' in window)){status.textContent='यो ब्राउजरमा Speech सुविधा उपलब्ध छैन।';return}
+  const text=getReadableText(); if(!text){status.textContent='पढ्नका लागि सामग्री भेटिएन।';return}
+  window.speechSynthesis.cancel();
+  const utter=new SpeechSynthesisUtterance(text); utter.lang=lang.value; utter.rate=Number(rate.value);
+  const chosen=voices.find(v=>v.name===voice.value); if(chosen) utter.voice=chosen;
+  utter.onstart=()=>status.textContent='🔊 पढिरहेको छ…';
+  utter.onend=()=>status.textContent='✅ पढाइ पूरा भयो।';
+  utter.onerror=()=>status.textContent='आवाज सुरु हुन सकेन। अर्को voice वा language छान्नुहोस्।';
+  window.speechSynthesis.speak(utter);
+ });
+ $('ayPause').addEventListener('click',()=>{if(window.speechSynthesis)window.speechSynthesis.pause();status.textContent='⏸ रोकिएको छ।'});
+ $('ayResume').addEventListener('click',()=>{if(window.speechSynthesis)window.speechSynthesis.resume();status.textContent='▶ पुनः पढ्दैछ।'});
+ $('ayStop').addEventListener('click',()=>{if(window.speechSynthesis)window.speechSynthesis.cancel();status.textContent='■ पढाइ बन्द गरियो।'});
+})();
+</script>
+
+</body>
+</html>
